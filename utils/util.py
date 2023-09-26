@@ -25,6 +25,8 @@ def custom_img(PATH):
   i=1
   plt.figure(figsize=(16,10))
   for c in character_list:
+    if not c.endswith(".jpg"):
+      continue
     plt.subplot(6,10,i)
     img = Image.open(os.path.join(PATH,c)).convert("L")
     enhancer = ImageEnhance.Brightness(img)
